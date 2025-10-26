@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Buddy Clone - Live Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #eee;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2196F3;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .toggle-btn {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background: #1976D2;
+        }
+
+        .toggle-btn:active {
+            transform: scale(0.98);
+        }
+
+        .content {
+            padding: 40px 0;
+        }
+
+        .content h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #2196F3;
+        }
+
+        .content h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        .content ul {
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scroll Buddy Clone</h1>
+            <p>Watch the scroll bar as you scroll!</p>
+            <button id="toggle-buddy" class="toggle-btn">Switch to Scuba Diver</button>
+        </header>
+
+        <section class="content">
+            <h2>About This Demo</h2>
+            <p>This is a clone of ScrollBuddy.com featuring two animated characters that move along your scrollbar:</p>
+            <ul>
+                <li><strong>Walker:</strong> A stick figure that walks along the scrollbar</li>
+                <li><strong>Scuba Diver:</strong> A diver that swims as you scroll</li>
+            </ul>
+
+            <h2>Features</h2>
+            <p>The scroll buddies provide visual feedback on your scroll position with smooth animations.</p>
+            <ul>
+                <li>Animated character that follows your scroll position</li>
+                <li>Walking/Swimming animation synced to scrolling</li>
+                <li>Direction-aware (flips when scrolling up/down)</li>
+                <li>Drag the character to scroll</li>
+                <li>Respects "prefers-reduced-motion" accessibility setting</li>
+            </ul>
+
+            <h2>How It Works</h2>
+            <p>The animation uses JavaScript to track scroll position and update the character's position and animation state. The characters are positioned using CSS fixed positioning and transformed based on scroll progress.</p>
+
+            <h3>Technical Details</h3>
+            <p>Key implementation features:</p>
+            <ul>
+                <li>Sine wave calculations for natural limb movement</li>
+                <li>requestAnimationFrame for smooth rendering</li>
+                <li>Scroll percentage mapping to vertical position</li>
+                <li>Transform-based flipping for direction changes</li>
+            </ul>
+
+            <h2>More Content</h2>
+            <p>Keep scrolling to see the buddy in action! The character moves smoothly along the right side of your screen, animating as you scroll through this page.</p>
+
+            <h3>Animation Mechanics</h3>
+            <p>The walker uses a phase-based animation system where arms and legs move in opposition to create a natural walking gait. The scuba diver uses similar principles but with a swimming motion that includes hip rotation, calf bending, and fin flexing.</p>
+
+            <h3>Accessibility</h3>
+            <p>If you have "reduce motion" enabled in your system preferences, the scroll buddy will automatically hide itself to respect your preference. This is important for users who experience motion sensitivity or vestibular disorders.</p>
+
+            <h2>Try It Out</h2>
+            <p>Scroll up and down to see the buddy follow your position. Try scrolling at different speeds to see how the animation responds. You can also click and drag the buddy itself to scroll the page!</p>
+
+            <h3>Additional Features</h3>
+            <p>The implementation includes several nice touches:</p>
+            <ul>
+                <li>Smooth transitions between scroll positions</li>
+                <li>Velocity-based drag scrolling</li>
+                <li>Hover text that displays on interaction</li>
+                <li>Back to top button (for walker mode)</li>
+            </ul>
+
+            <h2>Keep Scrolling!</h2>
+            <p>There's more content below to give you plenty of space to test the scroll buddy...</p>
+
+            <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #f0f0f0; margin: 40px 0; border-radius: 8px;">
+                <div style="text-align: center;">
+                    <h2>Halfway There!</h2>
+                    <p>The buddy should be about halfway down the page now</p>
+                </div>
+            </div>
+
+            <h2>More Information</h2>
+            <p>This clone demonstrates how creative scroll indicators can enhance user experience. Traditional scrollbars are functional but boring - animated scroll buddies add personality while maintaining utility.</p>
+
+            <h3>Use Cases</h3>
+            <ul>
+                <li>Personal blogs and portfolios</li>
+                <li>Long-form articles and documentation</li>
+                <li>Story-driven websites</li>
+                <li>Educational content</li>
+            </ul>
+
+            <h3>Customization Ideas</h3>
+            <p>You could extend this concept with:</p>
+            <ul>
+                <li>Different characters for different themes</li>
+                <li>Color customization</li>
+                <li>Multiple characters</li>
+                <li>Progress milestones</li>
+                <li>Sound effects (respectfully)</li>
+            </ul>
+
+            <h2>Almost Done</h2>
+            <p>Just a bit more scrolling to go! Notice how the buddy maintains smooth motion even when you scroll quickly or slowly.</p>
+
+            <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #e0e0e0; margin: 40px 0; border-radius: 8px;">
+                <div style="text-align: center;">
+                    <h2>Nearly at the Bottom!</h2>
+                    <p>The buddy should be near the bottom of the scrollbar</p>
+                </div>
+            </div>
+
+            <h2>Final Section</h2>
+            <p>Thanks for checking out this Scroll Buddy clone! The implementation shows how a small creative touch can make scrolling more engaging and fun.</p>
+
+            <p>Feel free to toggle between the walker and scuba diver using the button at the top of the page.</p>
+
+            <p><strong>GitHub:</strong> <a href="https://github.com/idvorkin-ai-tools/scroll-buddy" target="_blank">https://github.com/idvorkin-ai-tools/scroll-buddy</a></p>
+        </section>
+
+        <footer style="text-align: center; padding: 40px 20px; color: #666;">
+            <p>Scroll Buddy Clone - Reverse-engineered from ScrollBuddy.com</p>
+        </footer>
+    </div>
+
+    <script>
+// Walker Scroll Buddy
+(function() {
+    const styleContent = `
+        #walker {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            width: 50px;
+            height: 70px;
+            transition: top 0.1s ease-out;
+            transform: rotate(270deg);
+            z-index: 1000;
+            transform-origin: center center;
+            cursor: grab;
+        }
+
+        #walker.scrolling-up {
+            transform: rotate(270deg) scaleX(-1);
+        }
+
+        #walker::before {
+            content: 'Scroll Buddy';
+            position: absolute;
+            top: -5px;
+            left: -10%;
+            transform: translateX(-50%) rotate(90deg);
+            color: #999;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+        }
+
+        #walker.scrolling-up::before {
+            transform: translateX(-50%) rotate(-90deg) scaleX(-1);
+        }
+
+        #walker.show-text::before {
+            opacity: 1;
+        }
+
+        #walker:hover::before {
+            opacity: 1;
+        }
+
+        @media (hover: none) {
+            #walker {
+                width: 50px;
+                height: 70px;
+                right: 0;
+            }
+            #walker:hover::before {
+                opacity: 0;
+            }
+        }
+
+        .w-head {
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            left: 8px;
+            top: 0;
+        }
+
+        .w-body {
+            width: 2px;
+            height: 20px;
+            background: #000;
+            position: absolute;
+            left: 12px;
+            top: 10px;
+        }
+
+        .w-left-arm,
+        .w-right-arm {
+            width: 10px;
+            height: 2px;
+            background: #000;
+            position: absolute;
+            transform: rotate(90deg);
+        }
+
+        .w-left-arm {
+            left: 13px;
+            top: 15px;
+            transform-origin: left center;
+        }
+
+        .w-right-arm {
+            left: 13px;
+            top: 15px;
+            transform-origin: left center;
+        }
+
+        .w-left-forearm,
+        .w-right-forearm {
+            left: 13px;
+            top: 15px;
+            width: 8px;
+            height: 2px;
+            background: #000;
+            position: absolute;
+            transform-origin: left center;
+        }
+
+        .w-left-upper-leg,
+        .w-right-upper-leg {
+            width: 12px;
+            height: 2px;
+            background: #000;
+            position: absolute;
+            transform-origin: top left;
+        }
+
+        .w-left-upper-leg {
+            left: 14px;
+            top: 30px;
+        }
+
+        .w-right-upper-leg {
+            left: 14px;
+            top: 30px;
+        }
+
+        .w-left-lower-leg,
+        .w-right-lower-leg {
+            left: 14px;
+            top: 30px;
+            width: 10px;
+            height: 2px;
+            background: #000;
+            position: absolute;
+            transform-origin: top left;
+        }
+
+        .w-left-foot,
+        .w-right-foot {
+            left: 14px;
+            top: 30px;
+            width: 8px;
+            height: 2px;
+            background: #000;
+            position: absolute;
+            transform-origin: left center;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #walker {
+                display: none;
+            }
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: #999;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+        }
+
+        #back-to-top:hover {
+            color: #2196F3;
+        }
+    `;
+
+    function initWalker() {
+        // Add or re-add styles
+        let style = document.getElementById('walker-styles');
+        if (!style) {
+            style = document.createElement('style');
+            style.id = 'walker-styles';
+            style.textContent = styleContent;
+            document.head.appendChild(style);
+        }
+
+        // Create walker element
+        const walker = document.createElement('div');
+        walker.id = 'walker';
+        walker.innerHTML = `
+            <div class="w-head"></div>
+            <div class="w-body"></div>
+            <div class="w-left-arm"></div>
+            <div class="w-left-forearm"></div>
+            <div class="w-right-arm"></div>
+            <div class="w-right-forearm"></div>
+            <div class="w-left-upper-leg"></div>
+            <div class="w-left-lower-leg"></div>
+            <div class="w-left-foot"></div>
+            <div class="w-right-upper-leg"></div>
+            <div class="w-right-lower-leg"></div>
+            <div class="w-right-foot"></div>
+        `;
+        document.body.appendChild(walker);
+
+        // Create back to top button
+        const backToTop = document.createElement('button');
+        backToTop.id = 'back-to-top';
+        backToTop.textContent = 'Back to top';
+        document.body.appendChild(backToTop);
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        function updateBackToTopVisibility() {
+            if (window.scrollY > window.innerHeight / 2) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', updateBackToTopVisibility);
+        updateBackToTopVisibility();
+
+        // Animation variables
+        let textTimer = null;
+        let lastScrollY = window.scrollY;
+        let isScrollingUp = false;
+        let isDragging = false;
+        let startY = 0;
+        let lastY = 0;
+        let lastTime = 0;
+        let velocity = 0;
+
+        function showTextTemporarily() {
+            walker.classList.add('show-text');
+            if (textTimer) {
+                clearTimeout(textTimer);
+            }
+            textTimer = setTimeout(() => {
+                walker.classList.remove('show-text');
+            }, 3000);
+        }
+
+        // Drag to scroll functionality
+        walker.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startY = e.clientY;
+            lastY = e.clientY;
+            lastTime = Date.now();
+            walker.style.cursor = 'grabbing';
+            e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+
+            const currentTime = Date.now();
+            const deltaTime = currentTime - lastTime;
+            const deltaY = e.clientY - lastY;
+            velocity = deltaTime > 0 ? deltaY / deltaTime : 0;
+
+            const viewportHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollMultiplier = (documentHeight - viewportHeight) / (viewportHeight * 0.8);
+
+            window.scrollBy(0, deltaY * scrollMultiplier);
+            lastY = e.clientY;
+            lastTime = currentTime;
+            e.preventDefault();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            velocity = 0;
+            walker.style.cursor = 'grab';
+        });
+
+        // Touch support
+        walker.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startY = e.touches[0].clientY;
+            lastY = e.touches[0].clientY;
+            lastTime = Date.now();
+            showTextTemporarily();
+            e.preventDefault();
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+
+            const currentTime = Date.now();
+            const deltaTime = currentTime - lastTime;
+            const deltaY = e.touches[0].clientY - lastY;
+            velocity = deltaTime > 0 ? deltaY / deltaTime : 0;
+
+            const viewportHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollMultiplier = (documentHeight - viewportHeight) / (viewportHeight * 0.8);
+
+            window.scrollBy(0, deltaY * scrollMultiplier);
+            lastY = e.touches[0].clientY;
+            lastTime = currentTime;
+            e.preventDefault();
+        });
+
+        window.addEventListener('touchend', () => {
+            isDragging = false;
+            velocity = 0;
+        });
+
+        walker.style.cursor = 'grab';
+
+        // Animation state
+        let lastScroll = 0;
+        let walkPhase = 0;
+        const walkSpeed = 0.0314;
+
+        // Check for reduced motion preference
+        const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const prefersReducedMotion = prefersReducedMotionQuery.matches ||
+                                   navigator.platform.toLowerCase().includes('mac') &&
+                                   window.matchMedia('(-apple-reduce-motion: reduce)').matches;
+
+        if (prefersReducedMotion) {
+            walker.style.display = 'none';
+        }
+
+        // Get body parts
+        const leftArm = walker.querySelector('.w-left-arm');
+        const rightArm = walker.querySelector('.w-right-arm');
+        const leftForearm = walker.querySelector('.w-left-forearm');
+        const rightForearm = walker.querySelector('.w-right-forearm');
+        const leftUpperLeg = walker.querySelector('.w-left-upper-leg');
+        const rightUpperLeg = walker.querySelector('.w-right-upper-leg');
+        const leftLowerLeg = walker.querySelector('.w-left-lower-leg');
+        const rightLowerLeg = walker.querySelector('.w-right-lower-leg');
+        const leftFoot = walker.querySelector('.w-left-foot');
+        const rightFoot = walker.querySelector('.w-right-foot');
+
+        // Set static poses for reduced motion
+        if (prefersReducedMotion) {
+            leftArm.style.transform = rightArm.style.transform = 'rotate(90deg)';
+            leftForearm.style.transform = rightForearm.style.transform = 'rotate(90deg)';
+            leftUpperLeg.style.transform = rightUpperLeg.style.transform = 'rotate(90deg)';
+            leftLowerLeg.style.transform = rightLowerLeg.style.transform = 'rotate(90deg)';
+            leftFoot.style.transform = rightFoot.style.transform = 'rotate(180deg)';
+        }
+
+        function updateArms(phase) {
+            if (prefersReducedMotion) return;
+
+            const upperArmAngle = Math.sin(phase) * 30;
+            leftArm.style.transform = `rotate(${90 + upperArmAngle}deg)`;
+            rightArm.style.transform = `rotate(${90 - upperArmAngle}deg)`;
+
+            const leftForearmAngle = Math.sin(phase + Math.PI / 4) * 20 * (upperArmAngle > 0 ? 1 : 0.2);
+            const rightForearmAngle = Math.sin(phase + Math.PI / 4) * 20 * (upperArmAngle < 0 ? 1 : 0.2);
+
+            const leftElbowX = Math.cos((90 + upperArmAngle) * Math.PI / 180) * 10;
+            const leftElbowY = Math.sin((90 + upperArmAngle) * Math.PI / 180) * 10;
+            const rightElbowX = Math.cos((90 - upperArmAngle) * Math.PI / 180) * 10;
+            const rightElbowY = Math.sin((90 - upperArmAngle) * Math.PI / 180) * 10;
+
+            leftForearm.style.transform = `translate(${leftElbowX}px, ${leftElbowY}px) rotate(${90 + upperArmAngle + leftForearmAngle}deg)`;
+            rightForearm.style.transform = `translate(${rightElbowX}px, ${rightElbowY}px) rotate(${90 - upperArmAngle - rightForearmAngle}deg)`;
+        }
+
+        function updateLegs(phase) {
+            if (prefersReducedMotion) return;
+
+            const baseUpperLegAngle = Math.sin(phase) * 25;
+            const leftUpperLegAngle = baseUpperLegAngle < 0 ? baseUpperLegAngle * 1.5 : baseUpperLegAngle;
+            const rightUpperLegAngle = baseUpperLegAngle > 0 ? baseUpperLegAngle * 1.5 : baseUpperLegAngle;
+
+            leftUpperLeg.style.transform = `rotate(${90 - leftUpperLegAngle}deg)`;
+            rightUpperLeg.style.transform = `rotate(${90 + rightUpperLegAngle}deg)`;
+
+            const lowerLegAngle = Math.sin(phase + Math.PI / 4) * 20;
+
+            const leftBlend = Math.min(1, Math.max(0, (-leftUpperLegAngle + 10) / 20));
+            const rightBlend = Math.min(1, Math.max(0, (rightUpperLegAngle + 10) / 20));
+
+            const leftLowerLegAngle = lowerLegAngle * (1 - leftBlend) + (lowerLegAngle * -0.7) * leftBlend;
+            const rightLowerLegAngle = lowerLegAngle * (1 - rightBlend) + (lowerLegAngle * -0.7) * rightBlend;
+
+            const leftKneeX = Math.cos((90 - leftUpperLegAngle) * Math.PI / 180) * 12;
+            const leftKneeY = Math.sin((90 - leftUpperLegAngle) * Math.PI / 180) * 12;
+            const rightKneeX = Math.cos((90 + rightUpperLegAngle) * Math.PI / 180) * 12;
+            const rightKneeY = Math.sin((90 + rightUpperLegAngle) * Math.PI / 180) * 12;
+
+            leftLowerLeg.style.transform = `translate(${leftKneeX}px, ${leftKneeY}px) rotate(${90 - leftUpperLegAngle - leftLowerLegAngle}deg)`;
+            rightLowerLeg.style.transform = `translate(${rightKneeX}px, ${rightKneeY}px) rotate(${90 + rightUpperLegAngle + rightLowerLegAngle}deg)`;
+
+            const leftAnkleX = leftKneeX + Math.cos((90 - leftUpperLegAngle - leftLowerLegAngle) * Math.PI / 180) * 10;
+            const leftAnkleY = leftKneeY + Math.sin((90 - leftUpperLegAngle - leftLowerLegAngle) * Math.PI / 180) * 10;
+            const rightAnkleX = rightKneeX + Math.cos((90 + rightUpperLegAngle + rightLowerLegAngle) * Math.PI / 180) * 10;
+            const rightAnkleY = rightKneeY + Math.sin((90 + rightUpperLegAngle + rightLowerLegAngle) * Math.PI / 180) * 10;
+
+            const footAngle = Math.sin(phase) * 15;
+            leftFoot.style.transform = `translate(${leftAnkleX}px, ${leftAnkleY}px) rotate(${180 - footAngle}deg)`;
+            rightFoot.style.transform = `translate(${rightAnkleX}px, ${rightAnkleY}px) rotate(${180 + footAngle}deg)`;
+        }
+
+        function updateVerticalPosition(scrollPosition) {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollPercent = scrollPosition / (documentHeight - windowHeight);
+            const walkerHeight = walker.offsetHeight;
+            const maxTop = windowHeight - walkerHeight;
+            const newTop = scrollPercent * maxTop;
+
+            requestAnimationFrame(() => {
+                walker.style.top = `${newTop}px`;
+            });
+        }
+
+        function updateWalker() {
+            const scrollPosition = window.scrollY;
+            const scrollDelta = scrollPosition - lastScroll;
+
+            isScrollingUp = scrollPosition < lastScrollY;
+            lastScrollY = scrollPosition;
+
+            if (isScrollingUp) {
+                walker.classList.add('scrolling-up');
+            } else {
+                walker.classList.remove('scrolling-up');
+            }
+
+            if (!prefersReducedMotion) {
+                walkPhase += scrollDelta * walkSpeed;
+                updateArms(walkPhase);
+                updateLegs(walkPhase);
+            }
+
+            updateVerticalPosition(scrollPosition);
+            lastScroll = scrollPosition;
+        }
+
+        function initWalkerPosition() {
+            updateWalker();
+        }
+
+        if (document.readyState === 'complete') {
+            initWalkerPosition();
+        } else {
+            window.onload = initWalkerPosition;
+        }
+
+        prefersReducedMotionQuery.addEventListener('change', (e) => {
+            location.reload();
+        });
+
+        window.matchMedia('(-apple-reduce-motion: reduce)').addEventListener('change', (e) => {
+            location.reload();
+        });
+
+        window.addEventListener('scroll', updateWalker);
+        window.addEventListener('resize', updateWalker);
+
+        return walker;
+    }
+
+    // Export for external control
+    window.ScrollBuddy = window.ScrollBuddy || {};
+    window.ScrollBuddy.initWalker = initWalker;
+    window.ScrollBuddy.walker = null;
+})();
+
+
+
+// Scuba Diver Scroll Buddy
+(function() {
+    const styleContent = `
+        #scubaBuddy {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            width: 40px;
+            height: 100px;
+            transition: top 0.1s ease-out;
+            z-index: 1000;
+            transform-origin: center;
+        }
+
+        #scubaBuddy::before {
+            content: 'Scuba Buddy';
+            position: absolute;
+            top: -20px;
+            left: -50px;
+            color: #999;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+        }
+
+        #scubaBuddy.flipped::before {
+            transform: scaleY(-1);
+        }
+
+        #scubaBuddy.show-text::before {
+            opacity: 1;
+        }
+
+        #scubaBuddy:hover::before {
+            opacity: 1;
+        }
+
+        @media (hover: none) {
+            #scubaBuddy {
+                width: 50px;
+                height: 70px;
+                right: 0;
+            }
+            #scubaBuddy:hover::before {
+                opacity: 0;
+            }
+        }
+
+        .head {
+            width: 12px;
+            height: 12px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            left: 14px;
+            top: 0;
+        }
+
+        .mask {
+            width: 16px;
+            height: 8px;
+            background: #2196F3;
+            border: 2px solid black;
+            border-radius: 4px;
+            position: absolute;
+            left: 12px;
+            top: 2px;
+        }
+
+        .regulator {
+            width: 6px;
+            height: 6px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            left: 24px;
+            top: 4px;
+        }
+
+        .tank {
+            width: 10px;
+            height: 24px;
+            background: #808080;
+            border-radius: 10px;
+            position: absolute;
+            left: 8px;
+            top: 12px;
+        }
+
+        .body {
+            width: 3px;
+            height: 34px;
+            background: black;
+            position: absolute;
+            left: 19px;
+            top: 12px;
+        }
+
+        .left-arm {
+            width: 15px;
+            height: 3px;
+            background: black;
+            border-radius: 25%;
+            position: absolute;
+            transform-origin: left center;
+            left: 21px;
+            top: 18px;
+            transform: rotate(70deg);
+        }
+
+        .left-forearm {
+            width: 13.26px;
+            height: 3px;
+            background: black;
+            border-radius: 25%;
+            position: absolute;
+            transform-origin: left center;
+            left: 25.5px;
+            top: 30.5px;
+            transform: rotate(60deg);
+        }
+
+        .right-arm {
+            width: 15px;
+            height: 3px;
+            background: black;
+            border-radius: 25%;
+            position: absolute;
+            transform-origin: left center;
+            left: 21px;
+            top: 18px;
+            transform: rotate(120deg);
+        }
+
+        .right-forearm {
+            width: 13.26px;
+            height: 3px;
+            background: black;
+            border-radius: 25%;
+            position: absolute;
+            transform-origin: left center;
+            left: 14px;
+            top: 29.8px;
+            transform: rotate(70deg);
+        }
+
+        .left-leg,
+        .right-leg {
+            width: 3px;
+            height: 15px;
+            background: black;
+            position: absolute;
+            transform-origin: top center;
+        }
+
+        .left-leg {
+            left: 19px;
+            top: 45px;
+        }
+
+        .right-leg {
+            left: 19px;
+            top: 45px;
+        }
+
+        .left-calf,
+        .right-calf {
+            width: 3px;
+            height: 12px;
+            background: black;
+            position: absolute;
+        }
+
+        .left-calf {
+            left: 0;
+            top: 15px;
+            transform-origin: top center;
+        }
+
+        .right-calf {
+            left: 0;
+            top: 15px;
+            transform-origin: top center;
+        }
+
+        .left-fin,
+        .right-fin {
+            width: 8px;
+            height: 16px;
+            background: #2196F3;
+            position: absolute;
+            transform-origin: top center;
+            border-radius: 0 0 8px 8px;
+            clip-path: polygon(0 0, 100% 0, 120% 100%, -20% 100%);
+            box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .left-fin {
+            left: -2px;
+            top: 12px;
+        }
+
+        .right-fin {
+            left: -2px;
+            top: 12px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #scubaBuddy {
+                display: none;
+            }
+        }
+    `;
+
+    function initScuba() {
+        // Add or re-add styles
+        let style = document.getElementById('scuba-styles');
+        if (!style) {
+            style = document.createElement('style');
+            style.id = 'scuba-styles';
+            style.textContent = styleContent;
+            document.head.appendChild(style);
+        }
+
+        const stickFigure = document.createElement('div');
+        stickFigure.id = 'scubaBuddy';
+        stickFigure.innerHTML = `
+            <div class="tank"></div>
+            <div class="head"></div>
+            <div class="mask"></div>
+            <div class="regulator"></div>
+            <div class="body"></div>
+            <div class="left-arm"></div>
+            <div class="left-forearm"></div>
+            <div class="right-arm"></div>
+            <div class="right-forearm"></div>
+            <div class="left-leg">
+                <div class="left-calf">
+                    <div class="left-fin"></div>
+                </div>
+            </div>
+            <div class="right-leg">
+                <div class="right-calf">
+                    <div class="right-fin"></div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(stickFigure);
+
+        const buddy = document.getElementById('scubaBuddy');
+        let lastScroll = 0;
+        let swimPhase = 0;
+        const swimSpeed = 0.0314;
+        let isSwimmingDown = true;
+
+        const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const prefersReducedMotion = prefersReducedMotionQuery.matches ||
+                                   navigator.platform.toLowerCase().includes('mac') &&
+                                   window.matchMedia('(-apple-reduce-motion: reduce)').matches;
+
+        if (prefersReducedMotion) {
+            buddy.style.display = 'none';
+        }
+
+        const leftArm = buddy.querySelector('.left-arm');
+        const leftForearm = buddy.querySelector('.left-forearm');
+        const rightArm = buddy.querySelector('.right-arm');
+        const rightForearm = buddy.querySelector('.right-forearm');
+        const leftLeg = buddy.querySelector('.left-leg');
+        const rightLeg = buddy.querySelector('.right-leg');
+        const leftCalf = buddy.querySelector('.left-calf');
+        const rightCalf = buddy.querySelector('.right-calf');
+        const leftFin = buddy.querySelector('.left-fin');
+        const rightFin = buddy.querySelector('.right-fin');
+
+        function updateSwimMovement(phase) {
+            if (prefersReducedMotion) return;
+
+            const legPhase = phase * 0.8;
+
+            const getHipAngle = (phase) => {
+                const angle = Math.sin(phase) * 30;
+                return angle > 0 ? angle : angle * 1.4;
+            };
+
+            const leftHipAngle = getHipAngle(legPhase);
+            const rightHipAngle = getHipAngle(legPhase + Math.PI);
+
+            const getCalfAngle = (hipAngle) => {
+                if (hipAngle > 0) {
+                    return Math.min(35, hipAngle * 0.7);
+                } else {
+                    return Math.min(45, Math.abs(hipAngle * 1.2));
+                }
+            };
+
+            const leftCalfAngle = getCalfAngle(leftHipAngle);
+            const rightCalfAngle = getCalfAngle(rightHipAngle);
+
+            const getFinAngle = (hipAngle, calfAngle) => {
+                const baseAngle = 15;
+                return -Math.sign(hipAngle) * Math.abs(Math.sin(legPhase - Math.PI/6)) * baseAngle;
+            };
+
+            const leftFinFlexAngle = getFinAngle(leftHipAngle, leftCalfAngle);
+            const rightFinFlexAngle = getFinAngle(rightHipAngle, rightCalfAngle);
+
+            leftLeg.style.transform = `rotate(${leftHipAngle}deg)`;
+            leftCalf.style.transform = `rotate(${leftCalfAngle}deg)`;
+            leftFin.style.transform = `rotate(${leftFinFlexAngle}deg)`;
+
+            rightLeg.style.transform = `rotate(${rightHipAngle}deg)`;
+            rightCalf.style.transform = `rotate(${rightCalfAngle}deg)`;
+            rightFin.style.transform = `rotate(${rightFinFlexAngle}deg)`;
+        }
+
+        function updateBuddyVerticalPosition(scrollPosition) {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollPercent = scrollPosition / (documentHeight - windowHeight);
+            const buddyHeight = buddy.offsetHeight;
+            const maxTop = windowHeight - buddyHeight;
+            const newTop = scrollPercent * maxTop;
+
+            requestAnimationFrame(() => {
+                buddy.style.top = `${newTop}px`;
+            });
+        }
+
+        function updateBuddyPosition() {
+            const scrollPosition = window.scrollY;
+            const scrollDelta = scrollPosition - lastScroll;
+
+            if (scrollDelta > 0 && isSwimmingDown) {
+                isSwimmingDown = false;
+                buddy.style.transform = 'scaleY(-1)';
+                buddy.classList.add('flipped');
+            } else if (scrollDelta < 0 && !isSwimmingDown) {
+                isSwimmingDown = true;
+                buddy.style.transform = 'scaleY(1)';
+                buddy.classList.remove('flipped');
+            }
+
+            if (!prefersReducedMotion) {
+                swimPhase += scrollDelta * swimSpeed;
+                updateSwimMovement(swimPhase);
+            }
+
+            updateBuddyVerticalPosition(scrollPosition);
+            lastScroll = scrollPosition;
+        }
+
+        prefersReducedMotionQuery.addEventListener('change', (e) => {
+            location.reload();
+        });
+
+        window.matchMedia('(-apple-reduce-motion: reduce)').addEventListener('change', (e) => {
+            location.reload();
+        });
+
+        window.addEventListener('scroll', updateBuddyPosition);
+        window.addEventListener('resize', updateBuddyPosition);
+
+        updateBuddyPosition();
+
+        return buddy;
+    }
+
+    // Export for external control
+    window.ScrollBuddy = window.ScrollBuddy || {};
+    window.ScrollBuddy.initScuba = initScuba;
+    window.ScrollBuddy.scuba = null;
+})();
+
+
+
+// Main controller for switching between walker and scuba buddies
+(function() {
+    let currentBuddy = 'walker';
+
+    // Initialize with walker by default
+    document.addEventListener('DOMContentLoaded', function() {
+        initWalker();
+
+        const toggleButton = document.getElementById('toggle-buddy');
+        if (toggleButton) {
+            toggleButton.addEventListener('click', toggleBuddy);
+        }
+    });
+
+    function initWalker() {
+        removeScuba();
+        if (!window.ScrollBuddy.walker) {
+            window.ScrollBuddy.walker = window.ScrollBuddy.initWalker();
+        }
+        currentBuddy = 'walker';
+        updateButtonText();
+    }
+
+    function initScuba() {
+        removeWalker();
+        if (!window.ScrollBuddy.scuba) {
+            window.ScrollBuddy.scuba = window.ScrollBuddy.initScuba();
+        }
+        currentBuddy = 'scuba';
+        updateButtonText();
+    }
+
+    function removeWalker() {
+        const walker = document.getElementById('walker');
+        if (walker) {
+            walker.remove();
+        }
+        const backToTop = document.getElementById('back-to-top');
+        if (backToTop) {
+            backToTop.remove();
+        }
+        const walkerStyles = document.getElementById('walker-styles');
+        if (walkerStyles) {
+            walkerStyles.remove();
+        }
+        window.ScrollBuddy.walker = null;
+    }
+
+    function removeScuba() {
+        const scuba = document.getElementById('scubaBuddy');
+        if (scuba) {
+            scuba.remove();
+        }
+        const scubaStyles = document.getElementById('scuba-styles');
+        if (scubaStyles) {
+            scubaStyles.remove();
+        }
+        window.ScrollBuddy.scuba = null;
+    }
+
+    function toggleBuddy() {
+        if (currentBuddy === 'walker') {
+            initScuba();
+        } else {
+            initWalker();
+        }
+    }
+
+    function updateButtonText() {
+        const toggleButton = document.getElementById('toggle-buddy');
+        if (toggleButton) {
+            if (currentBuddy === 'walker') {
+                toggleButton.textContent = 'Switch to Scuba Diver';
+            } else {
+                toggleButton.textContent = 'Switch to Walker';
+            }
+        }
+    }
+
+    // Export for debugging
+    window.ScrollBuddy = window.ScrollBuddy || {};
+    window.ScrollBuddy.toggle = toggleBuddy;
+    window.ScrollBuddy.currentBuddy = () => currentBuddy;
+})();
+
+    </script>
+</body>
+</html>

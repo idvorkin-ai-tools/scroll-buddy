@@ -4,7 +4,7 @@ A fully functional clone of [ScrollBuddy.com](https://scrollbuddy.com/) featurin
 
 ## 🎮 Live Demo
 
-**[View Live Demo →](https://gistpreview.github.io/?9a8bd4372e3e87c37f3dbbcc6f892139/index.html)**
+**[View Live Demo →](https://htmlpreview.github.io/?https://gist.githubusercontent.com/idvorkin-ai-tools/62cfb5e6ed0454814ff03e2f6f450cd3/raw/demo.html)**
 
 Try it out! Scroll the page and watch the animated buddy follow along. Click the toggle button to switch between the walker and scuba diver.
 
@@ -16,7 +16,8 @@ This project is a reverse-engineered clone of ScrollBuddy.com, created by analyz
 
 - **Original Website**: [https://scrollbuddy.com/](https://scrollbuddy.com/)
 - **GitHub Repository**: [https://github.com/idvorkin-ai-tools/scroll-buddy](https://github.com/idvorkin-ai-tools/scroll-buddy)
-- **Live Demo**: [https://gistpreview.github.io/?9a8bd4372e3e87c37f3dbbcc6f892139/index.html](https://gistpreview.github.io/?9a8bd4372e3e87c37f3dbbcc6f892139/index.html)
+- **Live Demo**: [https://htmlpreview.github.io/?https://gist.githubusercontent.com/idvorkin-ai-tools/62cfb5e6ed0454814ff03e2f6f450cd3/raw/demo.html](https://htmlpreview.github.io/?https://gist.githubusercontent.com/idvorkin-ai-tools/62cfb5e6ed0454814ff03e2f6f450cd3/raw/demo.html)
+- **Gist (Standalone File)**: [https://gist.github.com/idvorkin-ai-tools/62cfb5e6ed0454814ff03e2f6f450cd3](https://gist.github.com/idvorkin-ai-tools/62cfb5e6ed0454814ff03e2f6f450cd3)
 - **Created By**: Claude (Anthropic AI) using reverse engineering techniques
 
 ## Reverse Engineering Process
