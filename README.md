@@ -2,6 +2,12 @@
 
 A fully functional clone of [ScrollBuddy.com](https://scrollbuddy.com/) featuring two animated characters that move along your scrollbar.
 
+## 🎮 Live Demo
+
+**[View Live Demo →](https://gistpreview.github.io/?9a8bd4372e3e87c37f3dbbcc6f892139/index.html)**
+
+Try it out! Scroll the page and watch the animated buddy follow along. Click the toggle button to switch between the walker and scuba diver.
+
 ## About This Project
 
 This project is a reverse-engineered clone of ScrollBuddy.com, created by analyzing the original website's implementation and recreating it from scratch. The original ScrollBuddy is a creative scroll indicator that adds personality to web pages through animated characters that follow your scroll position.
@@ -9,7 +15,8 @@ This project is a reverse-engineered clone of ScrollBuddy.com, created by analyz
 ### Original Source
 
 - **Original Website**: [https://scrollbuddy.com/](https://scrollbuddy.com/)
-- **Clone Repository**: This repository
+- **GitHub Repository**: [https://github.com/idvorkin-ai-tools/scroll-buddy](https://github.com/idvorkin-ai-tools/scroll-buddy)
+- **Live Demo**: [https://gistpreview.github.io/?9a8bd4372e3e87c37f3dbbcc6f892139/index.html](https://gistpreview.github.io/?9a8bd4372e3e87c37f3dbbcc6f892139/index.html)
 - **Created By**: Claude (Anthropic AI) using reverse engineering techniques
 
 ## Reverse Engineering Process
