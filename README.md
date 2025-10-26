@@ -8,6 +8,14 @@ A fully functional clone of [ScrollBuddy.com](https://scrollbuddy.com/) featurin
 
 Try it out! Scroll the page and watch the animated buddy follow along. Click the toggle button to switch between the walker and scuba diver.
 
+## 💬 Chat Log
+
+**[View Full Chat Log →](https://htmlpreview.github.io/?https://gist.githubusercontent.com/idvorkin-ai-tools/3c4e0db9551270d474c82a39ba2302d4/raw/chat-log.html)**
+
+**[View User & Assistant Only →](https://htmlpreview.github.io/?https://gist.githubusercontent.com/idvorkin-ai-tools/3c4e0db9551270d474c82a39ba2302d4/raw/chat-log.html&filter=user,assistant)**
+
+See the full Claude Code conversation that created this project! This HTML log was generated using [claude-code-log](https://github.com/daaain/claude-code-log). The filtered view shows only user prompts and assistant responses, hiding tool use and system messages.
+
 ## About This Project
 
 This project is a reverse-engineered clone of ScrollBuddy.com, created by analyzing the original website's implementation and recreating it from scratch. The original ScrollBuddy is a creative scroll indicator that adds personality to web pages through animated characters that follow your scroll position.
