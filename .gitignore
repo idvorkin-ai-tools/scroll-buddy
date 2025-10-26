@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test screenshots
+*.png
+
+# Playwright browsers
+.cache/
+
+# Debug and inspection files
+inspect-scrollbuddy.js
+debug-page.js
+
+# Original downloaded files (for reference only)
+sbv1-original.js
+sb_scuba-original.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

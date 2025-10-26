@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Buddy Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scroll Buddy Clone</h1>
+            <p>Watch the scroll bar as you scroll!</p>
+            <button id="toggle-buddy" class="toggle-btn">Switch to Scuba Diver</button>
+        </header>
+
+        <section class="content">
+            <h2>About This Demo</h2>
+            <p>This is a clone of ScrollBuddy.com featuring two animated characters that move along your scrollbar:</p>
+            <ul>
+                <li><strong>Walker:</strong> A stick figure that walks along the scrollbar</li>
+                <li><strong>Scuba Diver:</strong> A diver that swims as you scroll</li>
+            </ul>
+
+            <h2>Features</h2>
+            <p>The scroll buddies provide visual feedback on your scroll position with smooth animations.</p>
+            <ul>
+                <li>Animated character that follows your scroll position</li>
+                <li>Walking/Swimming animation synced to scrolling</li>
+                <li>Direction-aware (flips when scrolling up/down)</li>
+                <li>Drag the character to scroll</li>
+                <li>Respects "prefers-reduced-motion" accessibility setting</li>
+            </ul>
+
+            <h2>How It Works</h2>
+            <p>The animation uses JavaScript to track scroll position and update the character's position and animation state. The characters are positioned using CSS fixed positioning and transformed based on scroll progress.</p>
+
+            <h3>Technical Details</h3>
+            <p>Key implementation features:</p>
+            <ul>
+                <li>Sine wave calculations for natural limb movement</li>
+                <li>requestAnimationFrame for smooth rendering</li>
+                <li>Scroll percentage mapping to vertical position</li>
+                <li>Transform-based flipping for direction changes</li>
+            </ul>
+
+            <h2>More Content</h2>
+            <p>Keep scrolling to see the buddy in action! The character moves smoothly along the right side of your screen, animating as you scroll through this page.</p>
+
+            <h3>Animation Mechanics</h3>
+            <p>The walker uses a phase-based animation system where arms and legs move in opposition to create a natural walking gait. The scuba diver uses similar principles but with a swimming motion that includes hip rotation, calf bending, and fin flexing.</p>
+
+            <h3>Accessibility</h3>
+            <p>If you have "reduce motion" enabled in your system preferences, the scroll buddy will automatically hide itself to respect your preference. This is important for users who experience motion sensitivity or vestibular disorders.</p>
+
+            <h2>Try It Out</h2>
+            <p>Scroll up and down to see the buddy follow your position. Try scrolling at different speeds to see how the animation responds. You can also click and drag the buddy itself to scroll the page!</p>
+
+            <h3>Additional Features</h3>
+            <p>The implementation includes several nice touches:</p>
+            <ul>
+                <li>Smooth transitions between scroll positions</li>
+                <li>Velocity-based drag scrolling</li>
+                <li>Hover text that displays on interaction</li>
+                <li>Back to top button (for walker mode)</li>
+            </ul>
+
+            <h2>Keep Scrolling!</h2>
+            <p>There's more content below to give you plenty of space to test the scroll buddy...</p>
+
+            <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #f0f0f0; margin: 40px 0; border-radius: 8px;">
+                <div style="text-align: center;">
+                    <h2>Halfway There!</h2>
+                    <p>The buddy should be about halfway down the page now</p>
+                </div>
+            </div>
+
+            <h2>More Information</h2>
+            <p>This clone demonstrates how creative scroll indicators can enhance user experience. Traditional scrollbars are functional but boring - animated scroll buddies add personality while maintaining utility.</p>
+
+            <h3>Use Cases</h3>
+            <ul>
+                <li>Personal blogs and portfolios</li>
+                <li>Long-form articles and documentation</li>
+                <li>Story-driven websites</li>
+                <li>Educational content</li>
+            </ul>
+
+            <h3>Customization Ideas</h3>
+            <p>You could extend this concept with:</p>
+            <ul>
+                <li>Different characters for different themes</li>
+                <li>Color customization</li>
+                <li>Multiple characters</li>
+                <li>Progress milestones</li>
+                <li>Sound effects (respectfully)</li>
+            </ul>
+
+            <h2>Almost Done</h2>
+            <p>Just a bit more scrolling to go! Notice how the buddy maintains smooth motion even when you scroll quickly or slowly.</p>
+
+            <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #e0e0e0; margin: 40px 0; border-radius: 8px;">
+                <div style="text-align: center;">
+                    <h2>Nearly at the Bottom!</h2>
+                    <p>The buddy should be near the bottom of the scrollbar</p>
+                </div>
+            </div>
+
+            <h2>Final Section</h2>
+            <p>Thanks for checking out this Scroll Buddy clone! The implementation shows how a small creative touch can make scrolling more engaging and fun.</p>
+
+            <p>Feel free to toggle between the walker and scuba diver using the button at the top of the page.</p>
+        </section>
+
+        <footer style="text-align: center; padding: 40px 20px; color: #666;">
+            <p>Scroll Buddy Clone - Built with vanilla JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="walker.js"></script>
+    <script src="scuba.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
